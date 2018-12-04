@@ -27,6 +27,7 @@ public class IfrProdi extends javax.swing.JInternalFrame {
     public IfrProdi() {
         initComponents();
         
+        formTengah();
         setTabelProdi();
         listJurusan();
         showDataProdi();
@@ -145,10 +146,11 @@ public class IfrProdi extends javax.swing.JInternalFrame {
         if(framesize.height < screensize.height){
             framesize.height = screensize.height;
         }
-        if(framesize.width < screensize.width){
+        if(framesize.width > screensize.width){
             framesize.width = screensize.width;
         }
-        this.setLocation((screensize.width - framesize.width)/2, (screensize.height - framesize.height)/2);
+        this.setLocation((screensize.width - framesize.width)/2, 
+                (screensize.height - framesize.height)/2);
     }
     String[] KeyJurusan;
     private void listJurusan(){

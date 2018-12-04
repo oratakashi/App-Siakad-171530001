@@ -26,7 +26,6 @@ public class IfrUser extends javax.swing.JInternalFrame {
     String vid_user, vnama_user, vpass, vlev_user;
     public IfrUser() {
         initComponents();
-        
         formTengah();
         clearForm();
         disableForm();
@@ -147,10 +146,11 @@ public class IfrUser extends javax.swing.JInternalFrame {
         if(framesize.height < screensize.height){
             framesize.height = screensize.height;
         }
-        if(framesize.width < screensize.width){
+        if(framesize.width > screensize.width){
             framesize.width = screensize.width;
         }
-        this.setLocation((screensize.width - framesize.width)/2, (screensize.height - framesize.height)/2);
+        this.setLocation((screensize.width - framesize.width)/2, 
+                (screensize.height - framesize.height)/2);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -184,7 +184,7 @@ public class IfrUser extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Input Data"));
         jPanel1.setOpaque(false);
 
-        cmbLevUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Administrator", "User" }));
+        cmbLevUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Administrator", "Staf Akademik", "Staf Kepegawaian", "Staf Kemahasiswaan", "Staf Bag. Pembayaran UKT" }));
         cmbLevUser.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Level User :"));
         cmbLevUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
